@@ -73,7 +73,7 @@ def MRMD_ALL(X_train,y_train,X_v,y_v):
     return avg_score_test
 
 
-seq_X_train = pd.read_csv('X_train.csv')
+seq_X_train = pd.read_csv('2/X_train.csv')
 seq_test = test
 Seq_X_train = pro_data(seq_X_train)
 Seq_test = pro_data(seq_test)
