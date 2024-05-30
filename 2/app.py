@@ -122,7 +122,7 @@ Test.columns=num_index
 test = Test[mrmd_f[:455]]
 # test.to_csv('Feature_different/test_MRMD.csv',index = False)
 #模型
-X_train = pd.read_csv(2/'X_train_MRMD.csv').to_numpy()
+X_train = pd.read_csv('2/X_train_MRMD.csv').to_numpy()
 X_test = test
 y_train = pd.read_csv('2/y_train_resampled.csv').to_numpy()
 # y_test = pd.read_csv('2/data/test/y_test.csv').to_numpy()
