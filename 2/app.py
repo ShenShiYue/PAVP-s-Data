@@ -98,11 +98,11 @@ def MRMD_ALL(X_train,y_train,X_v,y_v):
     return avg_score_test
 
 
-seq_X_train = pd.read_csv('e:/1/data/train/X_train.csv')
+seq_X_train = pd.read_csv('X_train.csv')
 seq_test = test
 Seq_X_train = pro_data(seq_X_train)
 Seq_test = pro_data(seq_test)
-# Seq_test.to_csv('data/Seq_test_all.csv',index=False)
+# Seq_test.to_csv('Seq_test_all.csv',index=False)
 fea = Seq_test.columns[2:]
 X_train = Seq_X_train[fea].to_numpy()
 test = Seq_test[fea].to_numpy()
@@ -124,17 +124,17 @@ test_norm1 = pd.DataFrame(test_norm)
 #fs_MRMD
 test = test_norm1
 
-X = pd.read_csv('e:/1/data/train/Seq_X_train_all.csv')
+X = pd.read_csv('Seq_X_train_all.csv')
 feature_names = X.columns[2:]
-X_train = pd.read_csv('e:/1/data/train/X_train_norm.csv').to_numpy()
-y_train = pd.read_csv('e:/1/data/train/y_train.csv').to_numpy()
+X_train = pd.read_csv('X_train_norm.csv').to_numpy()
+y_train = pd.read_csv('y_train.csv').to_numpy()
 X_train1,X_v,y_train1,y_v = train_test_split(X_train,y_train,test_size=0.2,random_state=10)
 
 X_V = pd.DataFrame(X_v)
 y_V = pd.DataFrame(y_v)
 
 from mRMD import run
-mrmd_f = run('e:/1/data/process_X2.csv')
+mrmd_f = run('process_X2.csv')
 
 num_index = []
 for i in range(702):
@@ -147,10 +147,10 @@ Test.columns=num_index
 test = Test[mrmd_f[:455]]
 # test.to_csv('Feature_different/test_MRMD.csv',index = False)
 #模型
-X_train = pd.read_csv('e:/1/Feature_different/X_train_MRMD.csv').to_numpy()
+X_train = pd.read_csv('X_train_MRMD.csv').to_numpy()
 X_test = test
-y_train = pd.read_csv('e:/1/data/train/y_train_resampled.csv').to_numpy()
-# y_test = pd.read_csv('data/test/y_test.csv').to_numpy()
+y_train = pd.read_csv('y_train_resampled.csv').to_numpy()
+# y_test = pd.read_csv('y_test.csv').to_numpy()
 
 import xgboost as xgb
 model = xgb.XGBClassifier(random_state=10)
