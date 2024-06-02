@@ -145,7 +145,7 @@ for train_index, test_index in kf.split(X_train, y_train):
     y_train_ = y_train[train_index]
     model.fit(X_train_,y_train_)
 y_pred=model.predict(X_test)
-
+y_prob = model.predict_proba(X_test)[:, 1]
 if y_pred[0]==1:
     st.success('提供的肽链是抗病毒肽，得分为',y_prob)
 else:
