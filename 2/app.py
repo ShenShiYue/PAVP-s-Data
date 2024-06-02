@@ -16,11 +16,13 @@ st.set_page_config(
     initial_sidebar_state="auto"  #侧边栏
     )
 #获得序列
-text = st.text_input('请输入fasta格式的氨基酸序列：（例：>p5 NEMSWWMSHLIA）')
+text = st.text_area(label = '请输入fasta格式的氨基酸序列：（例：>p5/nNEMSWWMSHLIA）', 
+                    value='请输入...', 
+                    height=2, 
+                    max_chars=200, 
+                    help='最大长度限制为200')
 st.write('您的输入是', text)
-if st.button('确定'):
-    st.write('开始运行')
-# text='>p5 NEMSWWMSHLIA'
+# text='>p5/nNEMSWWMSHLIA'
 #定义函数
 def read_fasta(fname):
     fname = fname.split(' ')
