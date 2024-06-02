@@ -145,4 +145,3 @@ if y_pred[0]==1:
     st.success('提供的肽链是抗病毒肽')
 else:
     st.error('提供的肽链不是抗病毒肽')
-st.text('得分为',y_prob[0])
