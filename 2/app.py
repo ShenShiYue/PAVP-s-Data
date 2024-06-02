@@ -145,10 +145,6 @@ for train_index, test_index in kf.split(X_train, y_train):
 y_pred=model.predict(X_test)
 
 if y_pred[0]==1:
-    st.text('''
-提供的肽链为抗病毒肽
-''')
+    st.success('提供的肽链是抗病毒肽，得分为',y_prob)
 else:
-    st.text('''
-提供的肽链不是抗病毒肽
-''')
+    st.error('提供的肽链不是抗病毒肽，得分为',y_prob)
