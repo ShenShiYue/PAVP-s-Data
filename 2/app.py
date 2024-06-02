@@ -9,12 +9,7 @@ from fea_extract import insert_AAC,insert_CKSAAGP,insert_CTD,insert_AAE,insert_A
 from sklearn.ensemble import ExtraTreesClassifier
 seed = 10
 
-st.set_page_config(
-    page_title="PAVP预测网站",    #页面标题
-    page_icon=":rainbow:",        #icon
-    layout="wide",                #页面布局
-    initial_sidebar_state="auto"  #侧边栏
-    )
+st.title("PAVP预测网站")
 #获得序列
 text = st.text_area(label = '请输入fasta格式的氨基酸序列：（例：>p5 NEMSWWMSHLIA）', 
                     value='请输入...', 
