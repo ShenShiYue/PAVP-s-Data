@@ -10,6 +10,9 @@ from sklearn.ensemble import ExtraTreesClassifier
 seed = 10
 
 st.title("PAVP预测网站")
+st.markdown('''
+主要针对抗冠状病毒科、逆转录病毒科、疱疹病毒科、副粘病毒科、正粘病毒科、黄病毒科病毒的抗病毒肽
+''')
 #获得序列
 text = st.text_area(label = '请输入fasta格式的氨基酸序列：（例：>p5 NEMSWWMSHLIA）', 
                     value='请输入...', 
